@@ -10,11 +10,16 @@ public class Main {
 		
 		Mensaje vMen[] = IODatos.leerArchivo();
 		
-		for (int i = 0; i < vMen.length; i++) {
-			vMen[i].escribir();
+		
+		for (Mensaje mensaje : vMen) {
+			
+			for (int i = 0; i < mensaje.getMensaje().length() ; i++) {
+				System.out.print(mensaje.escribir(i));
+			}
+			
+			System.out.println();
+			
 		}
-		
-		
 		
 		
 		
