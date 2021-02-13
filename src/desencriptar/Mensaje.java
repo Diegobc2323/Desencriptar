@@ -41,8 +41,8 @@ public class Mensaje {
 		boolean romper = false;
 		
 		
-		for (int i = posIni; i < mensaje.length(); i++) {
-			letra = mensaje.substring(i,i+1);
+		
+			letra = mensaje.substring(posIni,posIni+1);
 			
 			aux= abc.indexOf(letra);
 			
@@ -51,8 +51,11 @@ public class Mensaje {
 			
 			aux=aux-7;
 			
-			if (aux<=27)
-				aux = pos+27;
+			if (aux<0)
+				aux += 27;
+			
+			if (aux==27)
+				return abc.substring(aux);
 			
 			letraNueva = abc.substring(aux, aux+1);
 			
@@ -60,9 +63,8 @@ public class Mensaje {
 				
 			return letraNueva;
 			
-		}
 		
-		return letraNueva;
+		
 	}
 	
 	
