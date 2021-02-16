@@ -10,7 +10,7 @@ public class Mensaje {
 	
 	
 	public Mensaje(String mensaje) {
-		this.abc ="abcdefghijklmnñopqrstuvwxyz";
+		this.abc ="abcdefghijklmnÃ±opqrstuvwxyz";
 		this.rot = 7;
 		this.mensaje = mensaje;
 	}
@@ -49,10 +49,10 @@ public class Mensaje {
 			if (letra.equals(" ") || letra.equals(".")|| letra.equals(",")) 
 				return letra;
 			
-			aux=aux-7;
+			aux=aux-rot;
 			
 			if (aux<0)
-				aux += 27;
+				aux += abc.length();
 			
 			if (aux==27)
 				return abc.substring(aux);
